@@ -1,0 +1,126 @@
+body {
+  font-family: Montserrat, sans-serif;
+  color: rgb(255, 255, 255);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+p{
+  font-size: 0.9em;
+  line-height: 25px;
+  color: rgb(255, 255, 255);
+}
+header {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+header > div {
+  min-height: 30em;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em;
+  padding-bottom: 15vh;
+  transition: 0.3s ease-in-out;
+}
+header video {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  z-index: -1;
+}
+header > div::before {
+  content: "";
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  position: absolute;
+  top: 100%;
+  height: 100%;
+}
+header .text {
+  position: relative;
+}
+.sub-heading b {
+  color: rgb(255, 255, 255);
+  margin-right: .05em;
+}
+.title {
+  margin: 0.2em 0 0.7em 0;
+}
+.sub-heading::before {
+  content: "";
+  position: absolute;
+  top: -2em;
+  left: 50%;
+  width: 3em;
+  height: 4px;
+  background: rgb(255, 255, 255);
+  transition: 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+.article-link {
+  text-decoration: none;
+  position: absolute;
+  display: inline-block;
+  margin: 5em 0 1em 0;
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+  font-weight: bold;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.article-link::before {
+  content: "";
+  position: absolute;
+  top: -4em;
+  left: 50%;
+  width: 1px;
+  height: 3em;
+  background: rgb(255, 255, 255);
+  transform: translateX(-50%);
+}
+.article-link:hover {
+  color: rgb(255, 255, 255);
+}
+header > div:hover {
+  padding: 10em;
+}
+header > div:hover .article-link {
+  opacity: 1;
+}
+header > div:nth-child(1):hover:before {
+  background: linear-gradient(
+    0deg, 
+    rgba(20, 99, 142, 0.8), 
+    rgba(255, 187, 42, 0)
+    );
+}
+header > div:nth-child(2) :hover:before {
+  background: linear-gradient(0deg, rgba(30, 133, 18, 0.8), rgba(255, 187, 42, 0));
+}
+header > div:nth-child(3) :hover:before {
+  background: linear-gradient(0deg, rgba(194, 137, 31, 0.8), rgba(255, 187, 42, 0));
+}
+header > div:hover p {
+  color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 750px) {
+  header {
+    grid-template-columns: 1fr;
+  }
+}
